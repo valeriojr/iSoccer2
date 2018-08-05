@@ -2,12 +2,10 @@ package UserInformation.Controller;
 
 import Exceptions.EmptyFieldException;
 import Exceptions.InvalidFieldException;
+import Exceptions.NullUserInformationException;
 import UserInformation.Model.Address;
 import UserInformation.View.AddressForm;
 import View.Form;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 
 public class AddressFormController {
     private AddressForm addressForm;
@@ -16,7 +14,7 @@ public class AddressFormController {
         this.addressForm = addressForm;
     }
 
-    public Address getAddress(){
+    public Address getAddress() throws NullUserInformationException {
         try {
             String address, city, state, country;
             Form localization = (Form) addressForm.getComponent("localization");
@@ -48,6 +46,6 @@ public class AddressFormController {
             exception.printStackTrace();
         }
 
-        return null;
+        throw new NullUserInformationException("Erro ao criar usuário");
     }
 }

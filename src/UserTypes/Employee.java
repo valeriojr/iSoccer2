@@ -12,4 +12,8 @@ public class Employee extends Person {
         super(personalData, address, contact);
         this.professionalData = professionalData;
     }
+
+    public String toString(){
+        return super.toString() + this.professionalData.toString();
+    }
 }

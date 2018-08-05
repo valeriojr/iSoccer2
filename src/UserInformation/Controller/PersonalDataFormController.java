@@ -41,11 +41,7 @@ public class PersonalDataFormController {
                 throw new InvalidFieldException(PersonalData.ID + " inválido!");
             }
 
-            PersonalData personalData = new PersonalData(name, id, birthdate);
-
-            System.out.println(personalData);
-
-            return personalData;
+            return new PersonalData(name, id, birthdate);
 
         } catch (ParseException parseException){
             JOptionPane.showMessageDialog(personalDataForm, "Data de nascimento inválida!");

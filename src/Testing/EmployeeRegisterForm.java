@@ -1,18 +1,15 @@
 package Testing;
 
+import Exceptions.NullUserInformationException;
 import UserInformation.Controller.AddressFormController;
 import UserInformation.Controller.ContactFormController;
 import UserInformation.Controller.PersonalDataFormController;
 import UserInformation.Controller.ProfessionalDataFormController;
-import UserInformation.Model.Address;
-import UserInformation.Model.PersonalData;
-import UserInformation.Model.ProfessionalData;
 import UserInformation.View.AddressForm;
 import UserInformation.View.ContactForm;
 import UserInformation.View.PersonalDataForm;
 import UserInformation.View.ProfessionalDataForm;
 import UserTypes.Employee;
-import View.Form;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,13 +32,16 @@ public class EmployeeRegisterForm {
 
         JButton registerButton = new JButton("Cadastrar");
         registerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+        registerButton.addActionListener(actionEvent -> {
+            try {
                 Employee employee = new Employee(new PersonalDataFormController(personalDataForm).getPersonalData(),
                         new AddressFormController(addressForm).getAddress(),
                         new ContactFormController(contactForm).getContact(),
                         new ProfessionalDataFormController(professionalDataForm).getProfessionalData());
+
+                System.out.println(employee);
+            }catch(NullUserInformationException e){
+                e.printStackTrace();
             }
         });
 

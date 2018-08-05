@@ -14,4 +14,8 @@ public class Person {
         this.contact = contact;
         this.address = address;
     }
+
+    public String toString(){
+        return this.personalData.toString() + this.contact.toString() + this.address.toString();
+    }
 }

@@ -11,4 +11,8 @@ public class Contact {
         this.email = email;
         this.phone = phone;
     }
+
+    public String toString(){
+        return String.format("%s: %s\n%s: %s\n", EMAIL, email, PHONE, phone);
+    }
 }

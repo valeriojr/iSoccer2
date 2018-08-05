@@ -1,5 +1,6 @@
 package UserInformation.Controller;
 
+import Exceptions.EmptyFieldException;
 import UserInformation.Model.Contact;
 import UserInformation.View.ContactForm;
 
@@ -20,7 +21,7 @@ public class ContactFormController {
             //TODO InvalidFieldException handling
 
             return new Contact(email, phone);
-        } catch (Exception e){
+        } catch (EmptyFieldException e){
             e.printStackTrace();
         }
 

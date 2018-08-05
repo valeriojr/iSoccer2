@@ -1,5 +1,6 @@
 package UserInformation.Model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PersonalData {
@@ -18,6 +19,7 @@ public class PersonalData {
     }
 
     public String toString(){
-        return String.format("%s: %s\n%s: %s\n%s: %s\n", NAME, name, ID, id, BIRTHDATE, birthdate);
+        return String.format("%s: %s\n%s: %s\n%s: %s\n", NAME, name, ID, id, BIRTHDATE,
+                new SimpleDateFormat("dd/MM/yyyy").format(birthdate));
     }
 }

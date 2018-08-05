@@ -12,4 +12,8 @@ public class ProfessionalData {
         this.salary = salary;
         this.job = job;
     }
+
+    public String toString(){
+        return String.format("%s: %s\n%s: %.2f\n", JOB, job, SALARY, salary);
+    }
 }
