@@ -18,7 +18,7 @@ public class ProfessionalDataFormController {
             String job;
 
             salary = Float.parseFloat(professionalDataForm.getString(ProfessionalData.SALARY));
-            job = professionalDataForm.getString(ProfessionalData.JOB);
+            job = professionalDataForm.getItem(ProfessionalData.JOB);
 
             return new ProfessionalData(salary, job);
         } catch (NumberFormatException | EmptyFieldException e){

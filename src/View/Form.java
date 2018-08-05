@@ -46,8 +46,17 @@ public class Form extends JPanel{
     }
 
     public String getString(String componentName) throws EmptyFieldException {
-        String input =  components.get(componentName).toString();
+        String input = ((JTextField) components.get(componentName)).getText();
         if(input.isEmpty()){
+            throw new EmptyFieldException(componentName);
+        }
+
+        return input;
+    }
+
+    public String getItem(String componentName) throws EmptyFieldException{
+        String input = ((JComboBox<String>) components.get(componentName)).getSelectedItem().toString();
+        if(input != null && input.isEmpty()){
             throw new EmptyFieldException(componentName);
         }
 
