@@ -37,7 +37,7 @@ public class AddressFormController {
                 if(s[content].isEmpty()){
                     throw new EmptyFieldException(s[label]);
                 }
-                if(!s[content].matches()){
+                if(!s[content].matches("[A-Za-záãâéêíóôúç0-9\\s-º]{1,}")){
                     throw new InvalidFieldException(s[label]);
                 }
             }
