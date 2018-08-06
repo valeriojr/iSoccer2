@@ -4,8 +4,6 @@ import UserInformation.Model.*;
 import UserTypes.Employee;
 
 public class Player extends Employee {
-
-
     public enum Position {
         GOALKEEPER("Goleiro"),
         DEFENDER("Zagueiro"),
@@ -18,6 +16,24 @@ public class Player extends Employee {
         private String name;
 
         Position(String name){
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
+
+    public enum Situation {
+        ABLE("Apto"),
+        MEDICAL_DEPARTMENT("Departamento médico"),
+        HANGED("Pendurado"),
+        RED_CARD("Expulso no último jogo");
+
+        private String name;
+
+        Situation(String name){
             this.name = name;
         }
 

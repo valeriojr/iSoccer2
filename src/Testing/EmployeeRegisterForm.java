@@ -9,6 +9,7 @@ import UserTypes.Jobs.Driver;
 import UserTypes.Jobs.Player;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,24 +46,26 @@ public class EmployeeRegisterForm {
 
         registerButton = new JButton("Cadastrar");
         registerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        registerButton.addActionListener(new ButtonListenet());
+        registerButton.addActionListener(new ButtonListener());
 
         panel.add(personalDataForm);
         panel.add(professionalDataForm);
         panel.add(contactForm);
         panel.add(addressForm);
-        panel.add(registerButton);
     }
 
     public static void main(String[] args){
         EmployeeRegisterForm form = new EmployeeRegisterForm();
-        form.frame.getContentPane().add(form.panel, BorderLayout.NORTH);
+        form.panel.setMinimumSize(new Dimension(600, 1000));
+        JScrollPane scrollPane = new JScrollPane(form.panel);
+        form.frame.getContentPane().add(scrollPane, BorderLayout.NORTH);
+        form.frame.getContentPane().add(form.registerButton, BorderLayout.SOUTH);
         form.frame.setVisible(true);
-        form.frame.setSize(600, 600);
+        form.frame.setSize(650, 650);
         form.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
-    public class ButtonListenet implements ActionListener{
+    public class ButtonListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
@@ -80,7 +83,7 @@ public class EmployeeRegisterForm {
                     case DRIVER:
                         break;
                     case PLAYER:
-                        PlayerData playerData = new PlayerData(0, Player.Position.GOALKEEPER, false);
+                        PlayerData playerData = new PlayerDataFormController(playerDataForm).getPlayerData();
                         employee = new Player(employee, playerData);
                         break;
                 }
