@@ -9,8 +9,8 @@ import javax.swing.text.MaskFormatter;
 import java.text.ParseException;
 
 public class PersonalDataForm extends Form {
-    public PersonalDataForm(String title){
-        super(title);
+    public PersonalDataForm(){
+        super("Dados pessoais");
     }
 
     @Override

@@ -7,8 +7,8 @@ import javax.swing.*;
 
 public class ContactForm extends Form {
 
-    public ContactForm(String title) {
-        super(title);
+    public ContactForm() {
+        super("Contato");
     }
 
     @Override

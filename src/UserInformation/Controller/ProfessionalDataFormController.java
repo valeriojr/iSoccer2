@@ -3,6 +3,9 @@ package UserInformation.Controller;
 import Exceptions.EmptyFieldException;
 import UserInformation.Model.ProfessionalData;
 import UserInformation.View.ProfessionalDataForm;
+import UserTypes.Employee;
+
+import javax.swing.*;
 
 public class ProfessionalDataFormController {
 
@@ -15,10 +18,11 @@ public class ProfessionalDataFormController {
     public ProfessionalData getProfessionalData() {
         try{
             float salary;
-            String job;
+            Employee.Job job;
 
             salary = Float.parseFloat(professionalDataForm.getString(ProfessionalData.SALARY));
-            job = professionalDataForm.getItem(ProfessionalData.JOB);
+            job = (Employee.Job) ((JComboBox<Employee.Job>) professionalDataForm.getComponent(ProfessionalData.JOB))
+                    .getSelectedItem();
 
             return new ProfessionalData(salary, job);
         } catch (NumberFormatException | EmptyFieldException e){

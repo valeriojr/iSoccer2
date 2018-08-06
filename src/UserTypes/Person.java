@@ -18,4 +18,16 @@ public class Person {
     public String toString(){
         return this.personalData.toString() + this.contact.toString() + this.address.toString();
     }
+
+    public PersonalData getPersonalData() {
+        return personalData;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
 }

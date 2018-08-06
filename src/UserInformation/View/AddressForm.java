@@ -6,15 +6,15 @@ import View.Form;
 import javax.swing.*;
 
 public class AddressForm extends Form {
-    public AddressForm(String title) {
-        super(title);
+    public AddressForm() {
+        super("Endereço");
     }
 
     @Override
     public void initializeComponents() {
         super.initializeComponents();
 
-        Form localization = new Form("");
+        Form localization = new Form();
         localization.setLayout(new BoxLayout(localization, BoxLayout.LINE_AXIS));
 
         addComponent(Address.ADDRESS, new JTextField());

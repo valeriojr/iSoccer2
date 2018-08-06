@@ -9,12 +9,17 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Form extends JPanel{
+    protected String title = "";
 
-    private String title;
     private Map<String, JComponent> components;
 
     public Form(String title) {
+        components = new TreeMap<String, JComponent>();
         this.title = title;
+        initializeComponents();
+    }
+
+    public Form() {
         components = new TreeMap<String, JComponent>();
         initializeComponents();
     }
