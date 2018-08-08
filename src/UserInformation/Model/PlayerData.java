@@ -16,9 +16,9 @@ public class PlayerData {
 
     private Map<String, Integer> statistics;
     private Player.Position position;
-    private boolean situation;
+    private Player.Situation situation;
 
-    public PlayerData(int number, Player.Position position, boolean situation){
+    public PlayerData(int number, Player.Position position, Player.Situation situation){
         this.statistics = new TreeMap<String, Integer>();
         this.position = position;
         this.situation = situation;

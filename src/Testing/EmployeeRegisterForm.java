@@ -5,41 +5,27 @@ import UserInformation.Controller.*;
 import UserInformation.Model.*;
 import UserInformation.View.*;
 import UserTypes.Employee;
-import UserTypes.Jobs.Driver;
 import UserTypes.Jobs.Player;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class EmployeeRegisterForm {
-    private JFrame frame;
-    private JPanel panel;
-
-    private PersonalDataForm personalDataForm;
-    private ProfessionalDataForm professionalDataForm;
-    private ContactForm contactForm;
-    private AddressForm addressForm;
-    private PlayerDataForm playerDataForm;
-    private DoctorDataForm doctorDataForm;
-    private DriverDataForm driverDataForm;
+public class EmployeeRegisterForm extends CompoundForm {
 
     private JButton registerButton;
 
     public EmployeeRegisterForm(){
-        frame = new JFrame();
+        super();
+        addForm("Personal", new PersonalDataForm());
+        addForm("Professional", new ProfessionalDataForm());
+        addForm("Contact", new ContactForm());
+        addForm("Address", new AddressForm());
 
-        panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-
-        personalDataForm = new PersonalDataForm();
-        contactForm = new ContactForm();
-        addressForm = new AddressForm();
-        professionalDataForm = new ProfessionalDataForm();
+        ProfessionalDataForm professionalDataForm = (ProfessionalDataForm) getForm("Professional");
 
         ((JComboBox<Employee.Job>)professionalDataForm.getComponent(ProfessionalData.JOB))
                 .addItemListener(new ComboBoxItemListener());
@@ -48,21 +34,8 @@ public class EmployeeRegisterForm {
         registerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         registerButton.addActionListener(new ButtonListener());
 
-        panel.add(personalDataForm);
-        panel.add(professionalDataForm);
-        panel.add(contactForm);
-        panel.add(addressForm);
-    }
-
-    public static void main(String[] args){
-        EmployeeRegisterForm form = new EmployeeRegisterForm();
-        form.panel.setMinimumSize(new Dimension(600, 1000));
-        JScrollPane scrollPane = new JScrollPane(form.panel);
-        form.frame.getContentPane().add(scrollPane, BorderLayout.NORTH);
-        form.frame.getContentPane().add(form.registerButton, BorderLayout.SOUTH);
-        form.frame.setVisible(true);
-        form.frame.setSize(650, 650);
-        form.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainPanel.add(new JLabel("Registrar Funcionário"), BorderLayout.NORTH);
+        mainPanel.add(registerButton, BorderLayout.SOUTH);
     }
 
     public class ButtonListener implements ActionListener{
@@ -70,10 +43,17 @@ public class EmployeeRegisterForm {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             try {
-                PersonalData personalData = new PersonalDataFormController(personalDataForm).getPersonalData();
-                ProfessionalData professionalData = new ProfessionalDataFormController(professionalDataForm).getProfessionalData();
-                Contact contact = new ContactFormController(contactForm).getContact();
-                Address address = new AddressFormController(addressForm).getAddress();
+                PersonalData personalData = new PersonalDataFormController(
+                        (PersonalDataForm) getForm("Personal")).getPersonalData();
+
+                ProfessionalData professionalData = new ProfessionalDataFormController(
+                        (ProfessionalDataForm) getForm("Professional")).getProfessionalData();
+
+                Contact contact = new ContactFormController(
+                        (ContactForm) getForm("Contact")).getContact();
+
+                Address address = new AddressFormController(
+                        (AddressForm) getForm("Address")).getAddress();
 
                 Employee employee = new Employee(personalData, address, contact, professionalData);
 
@@ -83,7 +63,9 @@ public class EmployeeRegisterForm {
                     case DRIVER:
                         break;
                     case PLAYER:
-                        PlayerData playerData = new PlayerDataFormController(playerDataForm).getPlayerData();
+                        PlayerData playerData = new PlayerDataFormController(
+                                (PlayerDataForm) getForm("Player Data")).getPlayerData();
+
                         employee = new Player(employee, playerData);
                         break;
                 }
@@ -103,36 +85,30 @@ public class EmployeeRegisterForm {
             if(itemEvent.getStateChange() == ItemEvent.SELECTED){
                 switch((Employee.Job) itemEvent.getItem()){
                     case DOCTOR:
-                        doctorDataForm = new DoctorDataForm();
-                        panel.add(doctorDataForm);
+                        addForm("Doctor Data", new DoctorDataForm());
                         break;
                     case DRIVER:
-                        driverDataForm = new DriverDataForm();
-                        panel.add(driverDataForm);
+                        addForm("Driver Data", new DriverDataForm());
                         break;
                     case PLAYER:
-                        playerDataForm = new PlayerDataForm();
-                        panel.add(playerDataForm);
+                        addForm("Player Data", new PlayerDataForm());
                         break;
                 }
             }else{
                 switch((Employee.Job) itemEvent.getItem()) {
                     case DOCTOR:
-                        panel.remove(doctorDataForm);
-                        doctorDataForm = null;
+                        removeForm("Doctor Data");
                         break;
                     case DRIVER:
-                        panel.remove(driverDataForm);
-                        driverDataForm = null;
+                        removeForm("Driver Data");
                         break;
                     case PLAYER:
-                        panel.remove(playerDataForm);
-                        playerDataForm = null;
+                        removeForm("Player Data");
                         break;
                 }
             }
-            panel.revalidate();
-            panel.repaint();
+            mainPanel.revalidate();
+            mainPanel.repaint();
         }
     }
 }

@@ -17,9 +17,11 @@ public class PlayerDataFormController {
 
     public PlayerData getPlayerData(){
         try{
-            Player.Position position = (Player.Position) ((JComboBox<Player.Position>) playerDataForm.getComponent(PlayerData.POSITION)).getSelectedItem();
+            Player.Position position = (Player.Position) ((JComboBox<Player.Position>) playerDataForm
+                    .getComponent(PlayerData.POSITION)).getSelectedItem();
             int number = Integer.parseInt(playerDataForm.getString(PlayerData.NUMBER));
-            boolean situation = ((JCheckBox) playerDataForm.getComponent(PlayerData.SITUATION)).isSelected();
+            Player.Situation situation = (Player.Situation) ((JComboBox<Player.Situation>) playerDataForm
+                    .getComponent(PlayerData.SITUATION)).getSelectedItem();
 
             return new PlayerData(number, position, situation);
         } catch(EmptyFieldException e){
