@@ -1,6 +1,6 @@
-package UserInformation.Model;
+package Model.Data;
 
-import UserTypes.Employee;
+import Model.Employee;
 
 public class ProfessionalData {
 

@@ -1,9 +1,9 @@
-package UserInformation.Controller;
+package Control;
 
 import Exceptions.EmptyFieldException;
-import UserInformation.Model.ProfessionalData;
-import UserInformation.View.ProfessionalDataForm;
-import UserTypes.Employee;
+import Model.Data.ProfessionalData;
+import View.ProfessionalDataForm;
+import Model.Employee;
 
 import javax.swing.*;
 

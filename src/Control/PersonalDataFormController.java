@@ -1,16 +1,14 @@
-package UserInformation.Controller;
+package Control;
 
 import Exceptions.EmptyFieldException;
 import Exceptions.InvalidFieldException;
-import UserInformation.Model.PersonalData;
-import UserInformation.View.PersonalDataForm;
+import Model.Data.PersonalData;
+import View.PersonalDataForm;
 
 import javax.swing.*;
-import javax.swing.text.DateFormatter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.zip.DataFormatException;
 
 public class PersonalDataFormController {
     private PersonalDataForm personalDataForm;

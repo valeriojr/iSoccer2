@@ -1,10 +1,9 @@
-package UserInformation.Controller;
+package Control;
 
 import Exceptions.EmptyFieldException;
-import Exceptions.InvalidFieldException;
-import UserInformation.Model.PlayerData;
-import UserInformation.View.PlayerDataForm;
-import UserTypes.Jobs.Player;
+import Model.Data.PlayerData;
+import View.PlayerDataForm;
+import Model.Jobs.Player;
 
 import javax.swing.*;
 

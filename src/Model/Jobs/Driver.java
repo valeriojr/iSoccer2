@@ -1,7 +1,7 @@
-package UserTypes.Jobs;
+package Model.Jobs;
 
-import UserInformation.Model.*;
-import UserTypes.Employee;
+import Model.Data.DriverData;
+import Model.Employee;
 
 public class Driver extends Employee {
     private DriverData driverData;

@@ -1,10 +1,10 @@
-package UserInformation.Controller;
+package Control;
 
 import Exceptions.EmptyFieldException;
 import Exceptions.InvalidFieldException;
 import Exceptions.NullUserInformationException;
-import UserInformation.Model.Address;
-import UserInformation.View.AddressForm;
+import Model.Data.Address;
+import View.AddressForm;
 import View.Form;
 
 public class AddressFormController {

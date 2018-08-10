@@ -1,10 +1,9 @@
-package UserInformation.View;
+package View;
 
-import UserInformation.Model.SupportData;
+import Model.Data.SupportData;
 import View.Form;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 

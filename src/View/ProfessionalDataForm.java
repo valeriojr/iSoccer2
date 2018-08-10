@@ -1,7 +1,7 @@
-package UserInformation.View;
+package View;
 
-import UserInformation.Model.ProfessionalData;
-import UserTypes.Employee;
+import Model.Data.ProfessionalData;
+import Model.Employee;
 import View.Form;
 
 import javax.swing.*;

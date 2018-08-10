@@ -1,10 +1,15 @@
 package Testing;
 
+import Control.AddressFormController;
+import Control.ContactFormController;
+import Control.PersonalDataFormController;
+import Control.SupportDataFormConroller;
 import Exceptions.NullUserInformationException;
-import UserInformation.Controller.*;
-import UserInformation.View.*;
-import UserTypes.Employee;
-import UserTypes.Supporter;
+import Model.Supporter;
+import View.AddressForm;
+import View.ContactForm;
+import View.PersonalDataForm;
+import View.SupportDataForm;
 
 import javax.swing.*;
 import java.awt.*;

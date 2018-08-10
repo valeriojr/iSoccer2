@@ -1,10 +1,9 @@
-package UserInformation.View;
+package View;
 
-import UserInformation.Model.PersonalData;
+import Model.Data.PersonalData;
 import View.Form;
 
 import javax.swing.*;
-import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 import java.text.ParseException;
 

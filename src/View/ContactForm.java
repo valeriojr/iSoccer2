@@ -1,6 +1,6 @@
-package UserInformation.View;
+package View;
 
-import UserInformation.Model.Contact;
+import Model.Data.Contact;
 import View.Form;
 
 import javax.swing.*;

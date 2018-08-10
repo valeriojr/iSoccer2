@@ -1,7 +1,6 @@
-package UserInformation.Model;
+package Model.Data;
 
-import UserTypes.Jobs.Player;
-import com.sun.org.apache.regexp.internal.RE;
+import Model.Jobs.Player;
 
 import java.util.Map;
 import java.util.TreeMap;

@@ -1,4 +1,4 @@
-package UserInformation.Model;
+package Model.Data;
 
 public class Address {
     public static final String ADDRESS = "Endereço",

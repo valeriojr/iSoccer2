@@ -1,7 +1,7 @@
-package UserTypes.Jobs;
+package Model.Jobs;
 
-import UserInformation.Model.*;
-import UserTypes.Employee;
+import Model.*;
+import Model.Data.*;
 
 public class Player extends Employee {
     public enum Position {

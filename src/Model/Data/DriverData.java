@@ -1,6 +1,4 @@
-package UserInformation.Model;
-
-import UserTypes.Jobs.Driver;
+package Model.Data;
 
 public class DriverData {
     public static final String CNH = "CNH";

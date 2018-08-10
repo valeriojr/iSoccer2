@@ -1,6 +1,6 @@
-package UserInformation.View;
+package View;
 
-import UserInformation.Model.Address;
+import Model.Data.Address;
 import View.Form;
 
 import javax.swing.*;

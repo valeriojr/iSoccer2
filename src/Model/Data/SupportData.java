@@ -1,4 +1,4 @@
-package UserInformation.Model;
+package Model.Data;
 
 public class SupportData {
     public enum Type{

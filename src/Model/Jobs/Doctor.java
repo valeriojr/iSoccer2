@@ -1,12 +1,11 @@
-package UserTypes.Jobs;
+package Model.Jobs;
 
-import UserInformation.Model.*;
-import UserTypes.Employee;
+import Model.Employee;
 
 public class Doctor extends Employee {
-    private DoctorData doctorData;
+    private Model.Data.Doctor doctorData;
 
-    public Doctor(Employee e, DoctorData doctorData) {
+    public Doctor(Employee e, Model.Data.Doctor doctorData) {
         super(e.getPersonalData(), e.getAddress(), e.getContact(), e.getProfessionalData());
         this.doctorData = doctorData;
     }

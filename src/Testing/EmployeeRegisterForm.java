@@ -1,11 +1,11 @@
 package Testing;
 
+import Control.*;
 import Exceptions.NullUserInformationException;
-import UserInformation.Controller.*;
-import UserInformation.Model.*;
-import UserInformation.View.*;
-import UserTypes.Employee;
-import UserTypes.Jobs.Player;
+import Model.Data.*;
+import Model.Employee;
+import Model.Jobs.Player;
+import View.*;
 
 import javax.swing.*;
 import java.awt.*;

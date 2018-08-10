@@ -1,7 +1,7 @@
-package UserInformation.View;
+package View;
 
-import UserInformation.Model.PlayerData;
-import UserTypes.Jobs.Player;
+import Model.Data.PlayerData;
+import Model.Jobs.Player;
 import View.Form;
 
 import javax.swing.*;

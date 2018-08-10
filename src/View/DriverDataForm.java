@@ -1,6 +1,6 @@
-package UserInformation.View;
+package View;
 
-import UserInformation.Model.DriverData;
+import Model.Data.DriverData;
 import View.Form;
 
 import javax.swing.*;

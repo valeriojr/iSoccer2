@@ -1,9 +1,9 @@
-package UserInformation.Controller;
+package Control;
 
 import Exceptions.EmptyFieldException;
 import Exceptions.NullUserInformationException;
-import UserInformation.Model.SupportData;
-import UserInformation.View.SupportDataForm;
+import Model.Data.SupportData;
+import View.SupportDataForm;
 
 public class SupportDataFormConroller {
     private SupportDataForm supportDataForm;

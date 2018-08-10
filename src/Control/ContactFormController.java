@@ -1,8 +1,8 @@
-package UserInformation.Controller;
+package Control;
 
 import Exceptions.EmptyFieldException;
-import UserInformation.Model.Contact;
-import UserInformation.View.ContactForm;
+import Model.Data.Contact;
+import View.ContactForm;
 
 public class ContactFormController {
     private ContactForm contactForm;

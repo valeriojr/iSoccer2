@@ -1,13 +1,11 @@
-package UserInformation.Model;
+package Model.Data;
 
-import UserTypes.Jobs.Doctor;
-
-public class DoctorData {
+public class Doctor {
     public static final String CRM = "CRM";
 
     private String crm;
 
-    public DoctorData(String crm){
+    public Doctor(String crm){
         this.crm = crm;
     }
 
