@@ -1,7 +1,6 @@
 package View;
 
-import Model.Data.Contact;
-import View.Form;
+import Model.Data.User.Contact;
 
 import javax.swing.*;
 

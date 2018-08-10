@@ -1,4 +1,6 @@
+import Testing.CompoundForm;
 import Testing.EmployeeRegisterForm;
+import Testing.SupporterRegisterForm;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,8 +10,8 @@ public class iSoccer {
 
     public iSoccer(){
         initializeFrame();
-        EmployeeRegisterForm employeeRegisterForm = new EmployeeRegisterForm();
-        frame.add(employeeRegisterForm.getPanel(), BorderLayout.CENTER);
+        CompoundForm registerForm = new SupporterRegisterForm();
+        frame.add(registerForm.getPanel(), BorderLayout.CENTER);
         frame.setVisible(true);
     }
 

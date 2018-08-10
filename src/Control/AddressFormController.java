@@ -3,7 +3,7 @@ package Control;
 import Exceptions.EmptyFieldException;
 import Exceptions.InvalidFieldException;
 import Exceptions.NullUserInformationException;
-import Model.Data.Address;
+import Model.Data.User.Address;
 import View.AddressForm;
 import View.Form;
 

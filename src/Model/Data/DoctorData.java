@@ -1,11 +1,11 @@
 package Model.Data;
 
-public class Doctor {
+public class DoctorData {
     public static final String CRM = "CRM";
 
     private String crm;
 
-    public Doctor(String crm){
+    public DoctorData(String crm){
         this.crm = crm;
     }
 

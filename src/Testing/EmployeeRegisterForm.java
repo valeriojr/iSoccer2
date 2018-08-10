@@ -2,7 +2,7 @@ package Testing;
 
 import Control.*;
 import Exceptions.NullUserInformationException;
-import Model.Data.*;
+import Model.Data.User.*;
 import Model.Employee;
 import Model.Jobs.Player;
 import View.*;
@@ -85,7 +85,7 @@ public class EmployeeRegisterForm extends CompoundForm {
             if(itemEvent.getStateChange() == ItemEvent.SELECTED){
                 switch((Employee.Job) itemEvent.getItem()){
                     case DOCTOR:
-                        addForm("Doctor Data", new DoctorDataForm());
+                        addForm("DoctorData Data", new DoctorDataForm());
                         break;
                     case DRIVER:
                         addForm("Driver Data", new DriverDataForm());
@@ -97,7 +97,7 @@ public class EmployeeRegisterForm extends CompoundForm {
             }else{
                 switch((Employee.Job) itemEvent.getItem()) {
                     case DOCTOR:
-                        removeForm("Doctor Data");
+                        removeForm("DoctorData Data");
                         break;
                     case DRIVER:
                         removeForm("Driver Data");

@@ -1,7 +1,7 @@
 package Control;
 
 import Exceptions.EmptyFieldException;
-import Model.Data.ProfessionalData;
+import Model.Data.User.ProfessionalData;
 import View.ProfessionalDataForm;
 import Model.Employee;
 

@@ -1,9 +1,10 @@
 package Control;
 
-import Exceptions.EmptyFieldException;
 import Exceptions.NullUserInformationException;
-import Model.Data.SupportData;
+import Model.Data.User.SupportData;
 import View.SupportDataForm;
+
+import javax.swing.*;
 
 public class SupportDataFormConroller {
     private SupportDataForm supportDataForm;
@@ -13,14 +14,7 @@ public class SupportDataFormConroller {
     }
 
     public SupportData getSupportData() throws NullUserInformationException {
-        try{
-            String type = supportDataForm.getItem(SupportData.TYPE);
-
-            return new SupportData(SupportData.Type.valueOf(type));
-        }catch(EmptyFieldException e){
-            e.printStackTrace();
-        }
-
-        throw new NullUserInformationException("Erro ao cadastrar sócio torcedor");
+        JComboBox<SupportData.Type> supporterType = (JComboBox<SupportData.Type>) supportDataForm.getComponent(SupportData.TYPE);
+        return new SupportData((SupportData.Type) supporterType.getSelectedItem());
     }
 }

@@ -2,7 +2,7 @@ package Control;
 
 import Exceptions.EmptyFieldException;
 import Exceptions.InvalidFieldException;
-import Model.Data.PersonalData;
+import Model.Data.User.PersonalData;
 import View.PersonalDataForm;
 
 import javax.swing.*;

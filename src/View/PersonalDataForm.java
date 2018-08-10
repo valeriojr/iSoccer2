@@ -1,7 +1,6 @@
 package View;
 
-import Model.Data.PersonalData;
-import View.Form;
+import Model.Data.User.PersonalData;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;

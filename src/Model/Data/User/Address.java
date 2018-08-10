@@ -1,4 +1,4 @@
-package Model.Data;
+package Model.Data.User;
 
 public class Address {
     public static final String ADDRESS = "Endereço",

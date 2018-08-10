@@ -1,7 +1,6 @@
 package View;
 
-import Model.Data.SupportData;
-import View.Form;
+import Model.Data.User.SupportData;
 
 import javax.swing.*;
 import java.awt.event.ItemEvent;

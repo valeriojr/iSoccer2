@@ -1,7 +1,7 @@
 package Model.Jobs;
 
 import Model.*;
-import Model.Data.*;
+import Model.Data.User.*;
 
 public class Player extends Employee {
     public enum Position {

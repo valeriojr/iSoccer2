@@ -1,12 +1,11 @@
 package View;
 
-import Model.Data.Doctor;
-import View.Form;
+import Model.Data.DoctorData;
 
 import javax.swing.*;
 
 public class DoctorDataForm extends Form {
     public DoctorDataForm(){
-        addComponent(Doctor.CRM, new JTextField(), Doctor.CRM);
+        addComponent(DoctorData.CRM, new JTextField(), DoctorData.CRM);
     }
 }

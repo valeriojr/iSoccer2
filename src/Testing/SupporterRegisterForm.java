@@ -1,58 +1,62 @@
 package Testing;
 
-import Control.AddressFormController;
-import Control.ContactFormController;
-import Control.PersonalDataFormController;
-import Control.SupportDataFormConroller;
+import Control.*;
 import Exceptions.NullUserInformationException;
+import Model.Data.User.Address;
+import Model.Data.User.Contact;
+import Model.Data.User.PersonalData;
+import Model.Data.User.SupportData;
 import Model.Supporter;
-import View.AddressForm;
-import View.ContactForm;
-import View.PersonalDataForm;
-import View.SupportDataForm;
+import View.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SupporterRegisterForm {
+public class SupporterRegisterForm extends CompoundForm{
 
-    public static void main(String args[]){
+    private JButton registerButton;
 
-        JFrame frame = new JFrame();
+    public SupporterRegisterForm(){
+        super();
+        addForm("Personal", new PersonalDataForm());
+        addForm("Support", new SupportDataForm());
+        addForm("Contact", new ContactForm());
+        addForm("Address", new AddressForm());
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-
-        final PersonalDataForm personalDataForm = new PersonalDataForm();
-        final ContactForm contactForm = new ContactForm();
-        final AddressForm addressForm = new AddressForm();
-        final SupportDataForm supportDataForm = new SupportDataForm();
-
-        JButton registerButton = new JButton("Cadastrar");
+        registerButton = new JButton("Cadastrar");
         registerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        //TODO Change Listener
-        registerButton.addActionListener(actionEvent -> {
-            try{
-                Supporter supporter = new Supporter(new PersonalDataFormController(personalDataForm).getPersonalData(),
-                        new AddressFormController(addressForm).getAddress(),
-                        new ContactFormController(contactForm).getContact(),
-                        new SupportDataFormConroller(supportDataForm).getSupportData());
+        registerButton.addActionListener(new ButtonListener());
+
+        mainPanel.add(new JLabel("Cadastrar Sócio torcedor"), BorderLayout.NORTH);
+        mainPanel.add(registerButton, BorderLayout.SOUTH);
+    }
+
+    public class ButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            try {
+                PersonalData personalData = new PersonalDataFormController(
+                        (PersonalDataForm) getForm("Personal")).getPersonalData();
+
+                SupportData supportData = new SupportDataFormConroller(
+                        (SupportDataForm) getForm("Support")).getSupportData();
+
+                Contact contact = new ContactFormController(
+                        (ContactForm) getForm("Contact")).getContact();
+
+                Address address = new AddressFormController(
+                        (AddressForm) getForm("Address")).getAddress();
+
+                Supporter supporter = new Supporter(personalData, address, contact, supportData);
 
                 System.out.println(supporter);
+
             }catch(NullUserInformationException e){
                 e.printStackTrace();
             }
-        });
-
-        panel.add(personalDataForm);
-        panel.add(contactForm);
-        panel.add(addressForm);
-        panel.add(supportDataForm);
-        panel.add(registerButton);
-
-        frame.getContentPane().add(panel, BorderLayout.NORTH);
-        frame.setVisible(true);
-        frame.setSize(600, 600);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        }
     }
 }

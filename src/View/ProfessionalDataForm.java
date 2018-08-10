@@ -1,8 +1,7 @@
 package View;
 
-import Model.Data.ProfessionalData;
+import Model.Data.User.ProfessionalData;
 import Model.Employee;
-import View.Form;
 
 import javax.swing.*;
 

@@ -1,7 +1,7 @@
 package Control;
 
 import Exceptions.EmptyFieldException;
-import Model.Data.Contact;
+import Model.Data.User.Contact;
 import View.ContactForm;
 
 public class ContactFormController {

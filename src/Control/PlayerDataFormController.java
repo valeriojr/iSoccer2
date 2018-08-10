@@ -1,7 +1,7 @@
 package Control;
 
 import Exceptions.EmptyFieldException;
-import Model.Data.PlayerData;
+import Model.Data.User.PlayerData;
 import View.PlayerDataForm;
 import Model.Jobs.Player;
 
