@@ -43,7 +43,6 @@ public class AddressFormController {
             return new Address(address, city, state, country);
 
         } catch (InvalidFieldException | EmptyFieldException exception){
-            exception.printStackTrace();
         }
 
         throw new NullUserInformationException("Erro ao criar usuário");
